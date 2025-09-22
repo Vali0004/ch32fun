@@ -4,9 +4,6 @@
 , libusb1
 }:
 
-let
-  withLibnfc = !stdenv.hostPlatform.isWindows;
-in
 stdenv.mkDerivation {
   name = "minichlink";
 
