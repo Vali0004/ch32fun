@@ -1,8 +1,8 @@
 all : flash
 
 TARGET:=blink
-TARGET_MCU:=CH570
-TARGET_MCU_PACKAGE:=CH570D
+TARGET_MCU:=CH582
+TARGET_MCU_PACKAGE:=CH582F
 
 include ../../ch32fun/ch32fun.mk
 
