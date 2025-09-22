@@ -132,7 +132,7 @@ void USBFS_IRQHandler()
 						UEP_CTRL_TX(0) ^= USBFS_UEP_T_TOG;
 						ctx->USBFS_SetupReqLen -= len;
 						ctx->pCtrlPayloadPtr += len;
-					}	
+					}
 #endif
 #if FUSB_USER_HANDLERS
 					if( len && USBFSCTX.USBFS_SetupReqCode != HID_GET_REPORT )
@@ -966,7 +966,7 @@ static inline int USBFS_SendNAK( int endp, int tx )
 	return 0;
 }
 
-#if defined( FUNCONF_USE_USBPRINTF ) && FUNCONF_USE_USBPRINTF
+#if defined( FUNCONF_USE_DEFAULT_HANDLERS ) && FUNCONF_USE_DEFAULT_HANDLERS
 WEAK int HandleInRequest( struct _USBState *ctx, int endp, uint8_t *data, int len )
 {
 	return 0;

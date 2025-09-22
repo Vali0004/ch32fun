@@ -309,7 +309,7 @@
 #ifdef __cplusplus
  extern "C" {
 #endif
-	
+
 #ifndef __ASSEMBLER__
 
 /* Standard Peripheral Library old types (maintained for legacy purpose) */

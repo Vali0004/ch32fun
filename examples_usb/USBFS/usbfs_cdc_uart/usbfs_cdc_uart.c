@@ -106,7 +106,7 @@ void HandleDataOut( struct _USBState * ctx, int endp, uint8_t * data, int len )
 			cdc.tx_wrap_pos = cdc.tx_pos + cdc.tx_remain + USBFS->RX_LEN;
 			write_pos = 0;
 		}
-		
+
 		// if( write_pos + len > UART_TX_BUF_SIZE - 1 )
 		// {
 		//   uart.tx_wrap_pos = write_pos;
@@ -114,7 +114,7 @@ void HandleDataOut( struct _USBState * ctx, int endp, uint8_t * data, int len )
 		// }
 		USBFS->UEP2_DMA = (uint32_t)(uart_tx_buffer + write_pos);
 		// printf("USBFS->UEP2_DMA = %08x\n", USBFS->UEP2_DMA);
-		
+
 		if( cdc.tx_remain >= ( UART_TX_BUF_SIZE ) )
 		{
 			if( usb_debug ) printf("Buffer overflow, %c\n", uart_tx_buffer[961]);
@@ -127,7 +127,7 @@ void HandleDataOut( struct _USBState * ctx, int endp, uint8_t * data, int len )
 		// uart.tx_pos += USBFS->RX_LEN;
 		// printf("write_pos = %d, tx_wrap_pos = %d, tx_remain = %d, txing = %d\n", write_pos, cdc.tx_wrap_pos, cdc.tx_remain, cdc.txing);
 		// Prevent overwrite of the buffer
-		
+
 		// printf("\n");
 		// printf("UART_TX_DMA->MADDR = %08x\n", UART_TX_DMA->MADDR);
 	}
